@@ -1,0 +1,13 @@
+argparse
+datetime
+exifread
+geopandas
+matplotlib
+pandas>1.3.0
+pillow
+pycountry
+python-dotenv
+rasterio
+requests
+rpy2
+xml2dict
