@@ -2,6 +2,7 @@ argparse
 datetime
 exifread
 geopandas
+hashlib
 matplotlib
 pandas>1.3.0
 pillow
