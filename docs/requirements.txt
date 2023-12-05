@@ -1,0 +1,16 @@
+beautifulsoup4
+exifread
+folium
+geopandas
+matplotlib
+pandas>1.3.0
+pdfkit
+pillow
+pycountry
+rasterio
+requests
+rpy2
+selenium
+xmltodict
+webdriver-manager 
+wkhtmltopdf
