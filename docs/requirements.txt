@@ -15,3 +15,4 @@ xmltodict
 webdriver-manager 
 wkhtmltopdf
 nbsphinx
+sphinx_rtd_theme
