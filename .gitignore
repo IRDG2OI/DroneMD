@@ -1,19 +1,4 @@
 .env
-enriched_func.py
-process_webodm.py  util
-exif_helper.py
 __pycache__
-zenodo_helper.py
-geoflow_helper.py   
-raster_helper.py   
-zenodo_helper.py.old
-__init__.py
-README.md
-zenodo.json
-list_projects.py
-read_metadata.py   
-list_users.py
-zip_helper.py
-main.py
 settings.py
 

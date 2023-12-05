@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module zenodo_helper &mdash; DroneMD (Metadata) 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module zip_helper" href="zip_helper.html" />
+    <link rel="prev" title="Module report" href="report.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DroneMD (Metadata)
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="description.html">Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">DroneMD (Metadata)’s modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="check_images.html">Module check_images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enriched_func.html">Module enriched_func</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exif_helper.html">Module exif_helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geoflow_helper.html">Module geoflow_helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meteo_helper.html">Module meteo_helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="process_webodm.html">Module process_webodm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raster_helper.html">Module raster_helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read_metadata.html">Module read_metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="report.html">Module report</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Module zenodo_helper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.check_token"><code class="docutils literal notranslate"><span class="pre">check_token()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.creator_dict"><code class="docutils literal notranslate"><span class="pre">creator_dict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zen_del_file"><code class="docutils literal notranslate"><span class="pre">zen_del_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zen_latest"><code class="docutils literal notranslate"><span class="pre">zen_latest()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zen_newversion"><code class="docutils literal notranslate"><span class="pre">zen_newversion()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zen_registerid"><code class="docutils literal notranslate"><span class="pre">zen_registerid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zen_unlock_submited"><code class="docutils literal notranslate"><span class="pre">zen_unlock_submited()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenedit"><code class="docutils literal notranslate"><span class="pre">zenedit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenfiles"><code class="docutils literal notranslate"><span class="pre">zenfiles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenlist_all"><code class="docutils literal notranslate"><span class="pre">zenlist_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenlist_all_query"><code class="docutils literal notranslate"><span class="pre">zenlist_all_query()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenlist_single"><code class="docutils literal notranslate"><span class="pre">zenlist_single()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenlist_single_files"><code class="docutils literal notranslate"><span class="pre">zenlist_single_files()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenmdt"><code class="docutils literal notranslate"><span class="pre">zenmdt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenodo_json"><code class="docutils literal notranslate"><span class="pre">zenodo_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenpublish"><code class="docutils literal notranslate"><span class="pre">zenpublish()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenul"><code class="docutils literal notranslate"><span class="pre">zenul()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenul2"><code class="docutils literal notranslate"><span class="pre">zenul2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zenodo_helper.zenvar"><code class="docutils literal notranslate"><span class="pre">zenvar()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="zip_helper.html">Module zip_helper</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DroneMD (Metadata)</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">DroneMD (Metadata)’s modules</a></li>
+      <li class="breadcrumb-item active">Module zenodo_helper</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/zenodo_helper.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="module-zenodo_helper">
+<span id="module-zenodo-helper"></span><h1>Module zenodo_helper<a class="headerlink" href="#module-zenodo_helper" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.check_token">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">check_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.check_token" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Function to check if Zenodo token is allowed to deposit files</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.creator_dict">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">creator_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.creator_dict" title="Link to this definition"></a></dt>
+<dd><p>Format Creator field to dict.
+Add orcid from contact file (geoflow format)
+Replace email with name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>class 'pandas.core.frame.DataFrame'</em>) – Pandas dataframe from metadata entities (geoflow format)</p></li>
+<li><p><strong>i</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – Line of metadata entities</p></li>
+<li><p><strong>contact_file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Filename containing contacts (geoflow format)</p></li>
+</ul>
+</dd>
+</dl>
+<p>e.g.:</p>
+<p>“creators”:
+[{
+“orcid”: “0000-0002-1825-0097”,
+“affiliation”: “Feline reasearch institute”,
+“name”: “Field, Gar”
+},
+{
+“orcid”: “0000-0002-1825-0097”,
+“affiliation”: “Feline reasearch institute”,
+“name”: “Cat, Felix”
+}],</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zen_del_file">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zen_del_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zen_del_file" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Delete file on zenodo platform</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo file</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zen_latest">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zen_latest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zen_latest" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Return latest record_id of query record</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>record_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Zenodo record id</p></li>
+<li><p><strong>e.g.</strong> – </p></li>
+<li><p><strong>record</strong> (<em># List</em><em> of </em><em>latest</em>) – </p></li>
+<li><p><strong>zenlist_all</strong><strong>(</strong><strong>&quot;https</strong> (<em>//zenodo.org/api&quot;</em><em>, </em><em>token</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zen_newversion">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zen_newversion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zen_newversion" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Create a new DOI version</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>record_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo record id</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zen_registerid">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zen_registerid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zen_registerid" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Register conceptdoi from draft</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>record_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Zenodo record id</p></li>
+<li><p><strong>e.g.</strong> – </p></li>
+<li><p><strong>records</strong> (<em># List of</em>) – </p></li>
+<li><p><strong>zenlist_single</strong><strong>(</strong><strong>&quot;https</strong> (<em>//zenodo.org/api&quot;</em><em>, </em><em>token</em><em>, </em><em>10064384</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zen_unlock_submited">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zen_unlock_submited</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zen_unlock_submited" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Unlock published version to update metadata</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>record_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo record id</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenedit">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenedit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenedit" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Unlock published version to update metadata</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>record_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo record id</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenfiles">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenfiles" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Retrieve uploaded files</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>record_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo record id</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenlist_all">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenlist_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenlist_all" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Return list of all Zenodo records</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>e.g.</strong> – </p></li>
+<li><p><strong>records</strong> (<em># List of</em>) – </p></li>
+<li><p><strong>zenlist_all</strong><strong>(</strong><strong>&quot;https</strong> (<em>//zenodo.org/api&quot;</em><em>, </em><em>token</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenlist_all_query">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenlist_all_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenlist_all_query" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Return list of all Zenodo records and a query</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>query</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – keyword you want to look for</p></li>
+<li><p><strong>e.g.</strong> – </p></li>
+<li><p><strong>keywords</strong> (<em># List</em><em> of </em><em>records with</em>) – </p></li>
+<li><p><strong>zenlist_all_query</strong><strong>(</strong><strong>&quot;https</strong> (<em>//zenodo.org/api&quot;</em><em>, </em><em>token</em><em>, </em><em>&quot;G2OI&quot;</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenlist_single">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenlist_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenlist_single" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Return details of one Zenodo record</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>record_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Zenodo record id</p></li>
+<li><p><strong>e.g.</strong> – </p></li>
+<li><p><strong>record</strong> (<em># Details</em><em> of </em><em>single</em>) – </p></li>
+<li><p><strong>zenlist_single</strong><strong>(</strong><strong>&quot;https</strong> (<em>//zenodo.org/api&quot;</em><em>, </em><em>token</em><em>, </em><em>10064384</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenlist_single_files">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenlist_single_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenlist_single_files" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Return files of one Zenodo record</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>record_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Zenodo record id</p></li>
+<li><p><strong>e.g.</strong> – </p></li>
+<li><p><strong>files</strong> (<em># List of</em>) – </p></li>
+<li><p><strong>zenlist_single</strong><strong>(</strong><strong>&quot;https</strong> (<em>//zenodo.org/api&quot;</em><em>, </em><em>token</em><em>, </em><em>10064384</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenmdt">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenmdt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenmdt" title="Link to this definition"></a></dt>
+<dd><p>Set and fill Metadata from Dataframe</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>record_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo record id</p></li>
+<li><p><strong>df</strong> (<em>class 'pandas.core.frame.DataFrame'</em>) – Pandas dataframe from metadata entities (geoflow format)</p></li>
+<li><p><strong>i</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – Line of metadata entities</p></li>
+<li><p><strong>contact_file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Filename containing contacts (geoflow format)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenodo_json">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenodo_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_prefix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenodo_json" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>JSON configuration for Zenodo with optionnal type parameter
+if type is not defined, regular zenodo will be use.
+if type=’sandbox’: Zenodo Sandbox will be use !</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – file name</p></li>
+<li><p><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – regular zenodo or zenodo sandbox</p></li>
+<li><p><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – output folder</p></li>
+<li><p><strong>out_prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – name in front of file name, usually date and hour</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenpublish">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenpublish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenpublish" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Publish record !</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – url of zenodo or zenodo sandbox without trailing ‘/’</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo access token</p></li>
+<li><p><strong>record_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – zenodo record id</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenul">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bucket_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenul" title="Link to this definition"></a></dt>
+<dd><p>Upload new files to Zenodo
+The target URL is a combination of the base url with records, record_id and files seperated by a slash.
+folder: str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bucket_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Zenodo bucket url</p></li>
+<li><p><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Zenodo token</p></li>
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – Filename to upload</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenul2">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenul2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenul2" title="Link to this definition"></a></dt>
+<dd><p>Upload new files to Zenodo
+The target URL is a combination of the base url with records, record_id and files seperated by a slash.
+folder: str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Zenodo base url ended by /</p></li>
+<li><p><strong>record_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – Zenodo record id. Also answered from zenvar[-1]
+Folder path where your archive is available</p></li>
+<li><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) – Filename to upload</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="zenodo_helper.zenvar">
+<span class="sig-prename descclassname"><span class="pre">zenodo_helper.</span></span><span class="sig-name descname"><span class="pre">zenvar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">requests_response</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zenodo_helper.zenvar" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Store 3 variables in a list:
+- bucket_url
+- Reserved DOI
+- Record id
+from check_token function</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>requests_response</strong> (<em>Python requests.Response Object</em>) – answer from check_token</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="report.html" class="btn btn-neutral float-left" title="Module report" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="zip_helper.html" class="btn btn-neutral float-right" title="Module zip_helper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Sylvain Poulain (G2OI). GPLv3 license.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

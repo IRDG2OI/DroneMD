@@ -1,0 +1,50 @@
+{
+    "creators": [
+        {
+            "orcid": "0009-0005-9789-9095",
+            "affiliation": "UMR Marbec, IRD",
+            "name": "Sylvain POULAIN"
+        }
+    ],
+
+    "license": "GPL-3.0",
+
+    "title": "DroneMD v0.1: Generate value added data and metadata from drone data collection (mapping purpose)",
+
+    "related_identifiers": [
+        {
+            "scheme": "url", 
+            "identifier": "https://github.com/kikislater/DroneMD/",
+            "relation": "isDerivedFrom",
+            "resource_type": "software"
+        },
+        {
+            "scheme": "url", 
+            "identifier": "https://dronemd.readthedocs.io/en/latest/",
+            "relation": "isDocumentedBy",
+            "resource_type": "publication-softwaredocumentation"
+        },
+        {
+            "scheme": "url", 
+            "identifier": "https://zenodo.org/records/10256944",
+            "relation": "isDocumentedBy",
+            "resource_type": "poster"
+        }
+    ],
+
+    "keywords": [
+        "Drone", 
+        "Metadata", 
+        "Opendronemap", 
+        "Automation", 
+        "Report", 
+        "Flight", 
+        "Meteo", 
+        "Zenodo", 
+        "DOI", 
+        "Publication", 
+        "Data", 
+        "G2OI", 
+        "Variables"
+    ]
+}

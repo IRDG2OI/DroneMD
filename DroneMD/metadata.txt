@@ -1,0 +1,29 @@
+abstract="My metadata description 1
+
+y"
+purpose=Some purpose for this metadata 1
+info=some supplemental info 1
+theme="theme[General]@http://mythesaurus/general=keyword@http://vocab/keyword,keyword2,keyword3"
+taxonomy="taxonomy[Especes]=Chromis chromis,Eretmochelys imbricata,Caretta caretta"
+project=Project 1@http://project1,Project 2@http://project2
+owner_metadata=0000-0002-5870-5762
+owner=0000-0002-5870-5762
+pointOfContact=julien.barde@ird.fr,sylvain.poulain@ird.fr
+processor=julien.barde@ird.fr
+publication=2021-03-22
+edition=2021-01-01
+srid=4326
+temporalcoverage=2023
+resource=image/tiff
+distribution=image/tiff[GeoTIFF]
+thumbnail="Overview1@https://via.placeholder.com/300x150.png/09f/fff?text=my-geoflow-record-1"
+parent=my-parent-metadata-identifier@http://catalogue/my-parent-metadata-identifier
+http=website@http://somelink/website
+useLimitation=Utilisation libre sous réserve de mentionner la source (a minima le nom du producteur) et la date de sa dernière mise à jour
+accessConstraint=otherRestrictions
+useConstraint=intellectualPropertyRights
+otherConstraint=some other constraints
+statement=My data management workflow
+process=rationale1[description1]
+
+
