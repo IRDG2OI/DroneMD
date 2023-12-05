@@ -25,3 +25,9 @@ Project made for G2OI [#f1]_ project by IRD [#f2]_
 
 .. [#f1] https://www.ird.fr/projet-g2oi-grand-observatoire-de-locean-indien
 .. [#f2] https://ird.fr
+
+
+------------------
+
+© Copyright 2023, Sylvain Poulain (G2OI). GPLv3 license.
+
