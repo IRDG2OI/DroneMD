@@ -1,4 +1,4 @@
-DroneMD (Metadata)'s documentation!
+DroneMD (Metadata)
 ==============================================
 DroneMD makes it easy to create metadata and enrich data by creating added value such as specific files in GIS format or reports including flight parameters and indicators including thumbnails to visualise data effectively.
 
