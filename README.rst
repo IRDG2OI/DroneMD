@@ -12,27 +12,10 @@ The metadata and configuration files generated follow the format used in geoflow
 
 Source on GitHub at `IRDG2OI/DroneMD <https://github.com/IRDG2OI/DroneMD>`_
 
-.. image:: _static/modules.jpg
-  :target: _static/modules.jpg
+.. image:: docs/_static/modules.jpg
+  :target: docs/_static/modules.jpg
 
 This project is being developed as part of the G2OI project, cofinanced by the European union, the Reunion region, and the French Republic.
-
-.. image:: _static/logos_partenaires.png
-
-.. toctree::
-   :maxdepth: 2
-
-   Home <self>
-   installation
-   tutorials
-   modules
-
-
-Indices and tables
-==================
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 
 Project made for G2OI [#f1]_ project by IRD [#f2]_
