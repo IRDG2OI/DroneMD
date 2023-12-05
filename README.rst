@@ -17,6 +17,7 @@ Source on GitHub at `IRDG2OI/DroneMD <https://github.com/IRDG2OI/DroneMD>`_
 
 This project is being developed as part of the G2OI project, cofinanced by the European union, the Reunion region, and the French Republic.
 
+.. image:: docs/_static/logos_partenaires.png
 
 Project made for G2OI [#f1]_ project by IRD [#f2]_
 
