@@ -1,4 +1,4 @@
 .env
 __pycache__
 settings.py
-
+docs/_html
