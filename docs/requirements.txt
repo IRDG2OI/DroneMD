@@ -14,3 +14,4 @@ selenium
 xmltodict
 webdriver-manager 
 wkhtmltopdf
+nbsphinx
