@@ -12,6 +12,10 @@ The metadata and configuration files generated follow the format used in geoflow
 
 Source on GitHub at `IRDG2OI/DroneMD <https://github.com/IRDG2OI/DroneMD>`_
 
+.. image:: https://readthedocs.org/projects/dronemd/badge/?version=latest
+    :target: https://dronemd.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
 .. image:: docs/_static/modules.jpg
   :target: docs/_static/modules.jpg
 
