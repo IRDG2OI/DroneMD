@@ -1,9 +1,0 @@
-Tutorials
-==============================================
-
-Tutorials use metadata.txt available here : https://github.com/IRDG2OI/geoflow-g2oi/tree/main/Action%201.3/METADATA_AND_CONFIGS
-
-.. toctree::
-    How_to_upload_to_zenodo.ipynb
-
-
