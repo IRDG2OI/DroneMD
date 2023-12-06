@@ -1,5 +1,4 @@
 .env
 __pycache__
-settings.py.*
-DroneMD/settings.py.bak
+settings.py
 docs/_html
